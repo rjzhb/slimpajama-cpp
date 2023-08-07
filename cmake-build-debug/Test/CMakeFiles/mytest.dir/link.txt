@@ -1,0 +1,1 @@
+/usr/bin/g++-11  -g   CMakeFiles/mytest.dir/Test.cpp.o  -o mytest  ../src/libCppModelProject_lib.a -lgtest 

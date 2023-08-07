@@ -1,0 +1,1 @@
+/usr/bin/g++-11  -g   CMakeFiles/mytestMultiple.dir/MultipleTest.cpp.o  -o mytestMultiple  ../src/libCppModelProject_lib.a -lgtest 

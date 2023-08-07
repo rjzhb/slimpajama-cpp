@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/rjzhb/Project/CppModelProject/Test/MultipleTest.cpp
+gtest/gtest.h
+/home/rjzhb/Project/CppModelProject/Test/gtest/gtest.h
+../src/MultipleManager/MultipleManager.h
+/home/rjzhb/Project/CppModelProject/src/MultipleManager/MultipleManager.h
+
+/home/rjzhb/Project/CppModelProject/src/MultipleManager/MultipleManager.h
+

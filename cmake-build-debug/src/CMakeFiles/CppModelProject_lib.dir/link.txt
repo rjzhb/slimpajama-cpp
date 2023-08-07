@@ -1,0 +1,2 @@
+/usr/bin/ar qc libCppModelProject_lib.a  CMakeFiles/CppModelProject_lib.dir/MultipleManager/MultipleManager.cpp.o CMakeFiles/CppModelProject_lib.dir/MyClass/MyClass.cpp.o
+/usr/bin/ranlib libCppModelProject_lib.a
