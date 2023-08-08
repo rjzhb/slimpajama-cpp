@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/test_MyClass.dir/Test.cpp.o -o test_MyClass  ../src/libslimpajama_lib.a -lgtest /usr/lib/x86_64-linux-gnu/libgtest.a /usr/lib/x86_64-linux-gnu/libgtest_main.a -lpthread /usr/lib/x86_64-linux-gnu/libgtest.a 

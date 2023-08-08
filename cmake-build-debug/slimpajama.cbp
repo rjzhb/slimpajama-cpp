@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="slimpajama"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\GTest\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Boost-1.74.0\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_headers-1.74.0\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_system-1.74.0\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_filesystem-1.74.0\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\jsoncpp\;CMake Files\src\;CMake Files\test\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="slimpajama">
+				<Option output="/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/slimpajama" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add option="-DBOOST_SYSTEM_DYN_LINK"/>
+					<Add option="-DBOOST_FILESYSTEM_DYN_LINK"/>
+					<Add directory="/home/rjzhb/Project/slimpajama-cpp/third_party/gtest/include"/>
+					<Add directory="/home/rjzhb/Project/slimpajama-cpp/src/**"/>
+					<Add directory="/usr/include/unicode"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 slimpajama"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="slimpajama/fast">
+				<Option output="/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/slimpajama" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add option="-DBOOST_SYSTEM_DYN_LINK"/>
+					<Add option="-DBOOST_FILESYSTEM_DYN_LINK"/>
+					<Add directory="/home/rjzhb/Project/slimpajama-cpp/third_party/gtest/include"/>
+					<Add directory="/home/rjzhb/Project/slimpajama-cpp/src/**"/>
+					<Add directory="/usr/include/unicode"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 slimpajama/fast"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="slimpajama_lib">
+				<Option output="/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/src/libslimpajama_lib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/rjzhb/Project/slimpajama-cpp/third_party/gtest/include"/>
+					<Add directory="/home/rjzhb/Project/slimpajama-cpp/src/**"/>
+					<Add directory="/usr/include/unicode"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 slimpajama_lib"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="slimpajama_lib/fast">
+				<Option output="/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/src/libslimpajama_lib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/rjzhb/Project/slimpajama-cpp/third_party/gtest/include"/>
+					<Add directory="/home/rjzhb/Project/slimpajama-cpp/src/**"/>
+					<Add directory="/usr/include/unicode"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 slimpajama_lib/fast"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_MyClass">
+				<Option output="/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/test/test_MyClass" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/test"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/rjzhb/Project/slimpajama-cpp/third_party/gtest/include"/>
+					<Add directory="/home/rjzhb/Project/slimpajama-cpp/src/**"/>
+					<Add directory="/usr/include/unicode"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 test_MyClass"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_MyClass/fast">
+				<Option output="/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/test/test_MyClass" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/test"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/rjzhb/Project/slimpajama-cpp/third_party/gtest/include"/>
+					<Add directory="/home/rjzhb/Project/slimpajama-cpp/src/**"/>
+					<Add directory="/usr/include/unicode"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 test_MyClass/fast"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="testMultiple">
+				<Option output="/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/test/testMultiple" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/test"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/rjzhb/Project/slimpajama-cpp/third_party/gtest/include"/>
+					<Add directory="/home/rjzhb/Project/slimpajama-cpp/src/**"/>
+					<Add directory="/usr/include/unicode"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 testMultiple"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="testMultiple/fast">
+				<Option output="/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/test/testMultiple" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/test"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/rjzhb/Project/slimpajama-cpp/third_party/gtest/include"/>
+					<Add directory="/home/rjzhb/Project/slimpajama-cpp/src/**"/>
+					<Add directory="/usr/include/unicode"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 testMultiple/fast"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/benchmark.cpp">
+			<Option target="slimpajama"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/src/preprocessing/normalize_text.cpp">
+			<Option target="slimpajama"/>
+			<Option target="slimpajama_lib"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/src/preprocessing/normalize_text.h">
+			<Option target="slimpajama"/>
+			<Option target="slimpajama_lib"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/test/MultipleTest.cpp">
+			<Option target="testMultiple"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/test/Test.cpp">
+			<Option target="test_MyClass"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/../../../../usr/lib/x86_64-linux-gnu/cmake/BoostDetectToolset-1.74.0.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/../../../../usr/lib/x86_64-linux-gnu/cmake/GTest/GTestConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\GTest\"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/../../../../usr/lib/x86_64-linux-gnu/cmake/GTest/GTestConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\GTest\"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/../../../../usr/lib/x86_64-linux-gnu/cmake/GTest/GTestTargets-none.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\GTest\"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/../../../../usr/lib/x86_64-linux-gnu/cmake/GTest/GTestTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\GTest\"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/../../../../usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Boost-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/../../../../usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Boost-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.74.0/boost_headers-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_headers-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.74.0/boost_headers-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_headers-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_system-1.74.0/boost_system-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_system-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_system-1.74.0/boost_system-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_system-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_system-1.74.0/libboost_system-variant-shared.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_system-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_system-1.74.0/libboost_system-variant-static.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_system-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_filesystem-1.74.0/boost_filesystem-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_filesystem-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_filesystem-1.74.0/boost_filesystem-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_filesystem-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_filesystem-1.74.0/libboost_filesystem-variant-shared.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_filesystem-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_filesystem-1.74.0/libboost_filesystem-variant-static.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_filesystem-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/../../../../usr/lib/x86_64-linux-gnu/cmake/jsoncpp/jsoncpp-namespaced-targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\jsoncpp\"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/../../../../usr/lib/x86_64-linux-gnu/cmake/jsoncpp/jsoncpp-targets-none.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\jsoncpp\"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/../../../../usr/lib/x86_64-linux-gnu/cmake/jsoncpp/jsoncpp-targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\jsoncpp\"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/../../../../usr/lib/x86_64-linux-gnu/cmake/jsoncpp/jsoncppConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\jsoncpp\"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/../../../../usr/lib/x86_64-linux-gnu/cmake/jsoncpp/jsoncppConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\jsoncpp\"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/test/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\test\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

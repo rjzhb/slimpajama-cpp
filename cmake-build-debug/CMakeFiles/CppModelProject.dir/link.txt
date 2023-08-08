@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/CppModelProject.dir/benchmark.cpp.o CMakeFiles/CppModelProject.dir/src/MyClass/MyClass.cpp.o CMakeFiles/CppModelProject.dir/src/MultipleManager/MultipleManager.cpp.o  -o CppModelProject 
+/usr/bin/c++ -g CMakeFiles/CppModelProject.dir/benchmark.cpp.o CMakeFiles/CppModelProject.dir/src/MyClass/MyClass.cpp.o CMakeFiles/CppModelProject.dir/src/MultipleManager/MultipleManager.cpp.o -o CppModelProject 

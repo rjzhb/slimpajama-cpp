@@ -1,0 +1,12 @@
+[submodule "third_party/json"]
+	path = third_party/json
+	url = https://github.com/nlohmann/json.git
+[submodule "third_party/zstd"]
+	path = third_party/zstd
+	url = git@github.com:facebook/zstd.git
+[submodule "third_party/ftfy"]
+	path = third_party/ftfy
+	url = git@github.com:rspeer/python-ftfy.git
+[submodule "third_party/tqdm"]
+	path = third_party/tqdm
+	url = git@github.com:tqdm/tqdm.git

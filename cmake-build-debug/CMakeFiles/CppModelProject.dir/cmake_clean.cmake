@@ -1,7 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/CppModelProject.dir/benchmark.cpp.o"
+  "CMakeFiles/CppModelProject.dir/benchmark.cpp.o.d"
   "CMakeFiles/CppModelProject.dir/src/MultipleManager/MultipleManager.cpp.o"
+  "CMakeFiles/CppModelProject.dir/src/MultipleManager/MultipleManager.cpp.o.d"
   "CMakeFiles/CppModelProject.dir/src/MyClass/MyClass.cpp.o"
+  "CMakeFiles/CppModelProject.dir/src/MyClass/MyClass.cpp.o.d"
   "CppModelProject"
   "CppModelProject.pdb"
 )

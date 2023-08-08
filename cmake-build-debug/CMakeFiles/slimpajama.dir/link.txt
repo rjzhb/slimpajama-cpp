@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/slimpajama.dir/benchmark.cpp.o CMakeFiles/slimpajama.dir/src/preprocessing/normalize_text.cpp.o -o slimpajama  /usr/lib/x86_64-linux-gnu/libboost_system.so.1.74.0 /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.74.0 -ljsoncpp -licudata -licui18n -licuio -licutest -licutu -licuuc 

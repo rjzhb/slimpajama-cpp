@@ -1,4 +1,4 @@
-C:\Windows\system32\wsl.exe --distribution Ubuntu --exec /bin/bash -c "export CMAKE_COLOR_DIAGNOSTICS=ON && export CLION_IDE=TRUE && export JETBRAINS_IDE=TRUE && cd /home/rjzhb/Project/CppModelProject/cmake-build-debug && /usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G 'CodeBlocks - Unix Makefiles' -S /home/rjzhb/Project/CppModelProject -B /home/rjzhb/Project/CppModelProject/cmake-build-debug"
+C:\Windows\system32\wsl.exe --distribution Ubuntu --exec /bin/bash -c "export CMAKE_COLOR_DIAGNOSTICS=ON && export CLION_IDE=TRUE && export JETBRAINS_IDE=TRUE && cd /home/rjzhb/Project/slimpajama-cpp/cmake-build-debug && /usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G 'CodeBlocks - Unix Makefiles' -S /home/rjzhb/Project/slimpajama-cpp -B /home/rjzhb/Project/slimpajama-cpp/cmake-build-debug"
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/rjzhb/Project/CppModelProject/cmake-build-debug
+-- Build files have been written to: /home/rjzhb/Project/slimpajama-cpp/cmake-build-debug

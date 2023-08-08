@@ -1,17 +1,42 @@
 cmake_minimum_required(VERSION 3.16)
-project(CppModelProject)
+project(slimpajama)
 
 set(CMAKE_CXX_STANDARD 14)
 
 find_package(GTest REQUIRED)
+find_package(Boost REQUIRED COMPONENTS system filesystem)
+find_package(jsoncpp REQUIRED)
+
+
 include_directories(${GTEST_INCLUDE_DIRS})
+
 # add include
 include_directories(${PROJECT_SOURCE_DIR}/third_party/gtest/include)
 include_directories(${PROJECT_SOURCE_DIR}/src/**/)
+include_directories(
+        /usr/include/unicode
+)
 
 add_subdirectory(src)
 add_subdirectory(test)
 # add executable
-add_executable(CppModelProject benchmark.cpp src/MyClass/MyClass.h src/MyClass/MyClass.cpp src/MultipleManager/MultipleManager.cpp src/MultipleManager/MultipleManager.h)
+add_executable(slimpajama benchmark.cpp
+        src/preprocessing/normalize_text.h
+        src/preprocessing/normalize_text.cpp
+        )
+target_include_directories(slimpajama PRIVATE ${Boost_INCLUDE_DIRS})
+target_link_libraries(slimpajama
+        ${Boost_LIBRARIES}
+        jsoncpp
+        icudata
+        icui18n
+        icuio
+        icutest
+        icutu
+        icuuc
+        )
+
+
+
 
 

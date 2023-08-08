@@ -1,18 +1,15 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
   )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/rjzhb/Project/CppModelProject/src/MultipleManager/MultipleManager.cpp" "/home/rjzhb/Project/CppModelProject/cmake-build-debug/src/CMakeFiles/CppModelProject_lib.dir/MultipleManager/MultipleManager.cpp.o"
-  "/home/rjzhb/Project/CppModelProject/src/MyClass/MyClass.cpp" "/home/rjzhb/Project/CppModelProject/cmake-build-debug/src/CMakeFiles/CppModelProject_lib.dir/MyClass/MyClass.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
 
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../third_party/gtest/include"
-  "../src/**"
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/rjzhb/Project/slimpajama-cpp/src/MultipleManager/MultipleManager.cpp" "src/CMakeFiles/CppModelProject_lib.dir/MultipleManager/MultipleManager.cpp.o" "gcc" "src/CMakeFiles/CppModelProject_lib.dir/MultipleManager/MultipleManager.cpp.o.d"
+  "/home/rjzhb/Project/slimpajama-cpp/src/MyClass/MyClass.cpp" "src/CMakeFiles/CppModelProject_lib.dir/MyClass/MyClass.cpp.o" "gcc" "src/CMakeFiles/CppModelProject_lib.dir/MyClass/MyClass.cpp.o.d"
   )
 
 # Targets to which this target links.
