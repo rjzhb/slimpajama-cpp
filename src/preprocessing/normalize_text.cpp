@@ -5,6 +5,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <utility>
 #include <vector>
 #include <string>
 #include <boost/filesystem.hpp>
@@ -21,8 +22,8 @@
 
 namespace fs = boost::filesystem;
 
-NormalizeText::NormalizeText(const std::string &data_dir, const std::string &target_dir, int idx)
-        : data_dir_(data_dir), target_dir_(target_dir), idx_(idx) {}
+NormalizeText::NormalizeText(std::string data_dir, std::string target_dir, int idx)
+        : data_dir_(std::move(data_dir)), target_dir_(std::move(target_dir)), idx_(idx) {}
 
 
 std::string normalize_text(const std::string &text) {
@@ -113,7 +114,7 @@ void NormalizeText::run() {
 
     std::vector<std::vector<std::string>> file_chunks;
     for (size_t i = 0; i < files.size(); i += n_chunks) {
-        file_chunks.push_back(std::vector<std::string>(files.begin() + i, files.begin() + i + n_chunks));
+        file_chunks.emplace_back(files.begin() + i, files.begin() + i + n_chunks);
     }
 
     std::vector<std::thread> threads;

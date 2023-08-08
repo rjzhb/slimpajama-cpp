@@ -9,15 +9,9 @@
 #include <string>
 #include <mutex>
 
-struct Args {
-    std::string data_dir;
-    std::string target_dir;
-    int idx;
-};
-
 class NormalizeText {
 public:
-    NormalizeText(const std::string &data_dir, const std::string &target_dir, int idx);
+    NormalizeText(std::string data_dir, std::string target_dir, int idx);
 
     void run();
 
