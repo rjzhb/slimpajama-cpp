@@ -21,8 +21,8 @@
 
 namespace fs = boost::filesystem;
 
-NormalizeText::NormalizeText(const std::string &data_dir, const std::string &target_dir, bool zst, int idx)
-        : data_dir_(data_dir), target_dir_(target_dir), zst_(zst), idx_(idx) {}
+NormalizeText::NormalizeText(const std::string &data_dir, const std::string &target_dir, int idx)
+        : data_dir_(data_dir), target_dir_(target_dir), idx_(idx) {}
 
 
 std::string normalize_text(const std::string &text) {
@@ -43,13 +43,13 @@ std::string normalize_text(const std::string &text) {
 }
 
 
-void NormalizeText::recreate_dataset(const std::vector<std::string> &files, const Args &args, int process_no,
+void NormalizeText::recreate_dataset(const std::vector<std::string> &files, int process_no,
                                      std::mutex &pbar_mutex) {
     boost::progress_display pbar(files.size());
 
     for (const auto &file: files) {
-        fs::path file_path = fs::path(args.data_dir) / file;
-        fs::path target_path = fs::path(args.target_dir) / file;
+        fs::path file_path = fs::path(data_dir_) / file;
+        fs::path target_path = fs::path(target_dir_) / file;
 
         std::ifstream input_file(file_path.string());
         std::ofstream output_file(target_path.string());
@@ -84,11 +84,11 @@ void NormalizeText::recreate_dataset(const std::vector<std::string> &files, cons
     }
 }
 
-void NormalizeText::run(Args args) {
-    fs::create_directories(args.target_dir);
+void NormalizeText::run() {
+    fs::create_directories(target_dir_);
 
     std::vector<std::string> files;
-    for (const auto &entry: fs::directory_iterator(args.data_dir)) {
+    for (const auto &entry: fs::directory_iterator(data_dir_)) {
         if (is_regular_file(entry) && entry.path().extension() == ".jsonl") {
             files.push_back(entry.path().filename().string());
         }
@@ -96,9 +96,9 @@ void NormalizeText::run(Args args) {
 
     std::sort(files.begin(), files.end());
 
-    if (args.idx != -1) {
-        int start_idx = args.idx * 64;
-        int end_idx = (args.idx + 1) * 64;
+    if (idx_ != -1) {
+        int start_idx = idx_ * 64;
+        int end_idx = (idx_ + 1) * 64;
         files.erase(files.begin(), files.begin() + start_idx);
         files.resize(end_idx - start_idx);
     }
@@ -121,7 +121,7 @@ void NormalizeText::run(Args args) {
 
     for (int i = 0; i < n_proc; ++i) {
         threads.emplace_back([&] {
-            recreate_dataset(file_chunks[i], args, i, pbar_mutex);
+            recreate_dataset(file_chunks[i], i, pbar_mutex);
         });
     }
 

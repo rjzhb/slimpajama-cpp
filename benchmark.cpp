@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <boost/filesystem.hpp>
+#include "src/preprocessing/normalize_text.h"
 
 namespace fs = boost::filesystem;
 
@@ -37,13 +38,7 @@ std::vector<int> n_documents = {
         111402716
 };
 
-void normalizeText(const std::string& inputDir, const std::string& dataset, const std::string& targetDir, bool isZst, int idx) {
-    std::cout << "Normalizing text for dataset: " << dataset << std::endl;
-    // Implement your text normalization logic here
-    // Use inputDir, dataset, targetDir, isZst, and idx as needed
-}
-
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
     if (argc < 2) {
         std::cout << "Please provide the input directory." << std::endl;
         return 1;
@@ -55,18 +50,18 @@ int main(int argc, char* argv[]) {
 
     std::vector<std::string> dsDirs = ds_names;
     dsDirs.erase(std::remove(dsDirs.begin(), dsDirs.end(), "common_crawl"), dsDirs.end());
-    for (const auto& cc : cc_years) {
+    for (const auto &cc: cc_years) {
         dsDirs.push_back("common_crawl/" + cc);
     }
 
-    for (const auto& dataset : dsDirs) {
-        std::string normArgsDataDir = (fs::path(inputDir) / dataset).string();
-        std::string normArgsTargetDir = (fs::path(redPajamaNormDir) / dataset).string();
-        bool isZst = dataset.find("common_crawl") != std::string::npos;
+    for (const auto &dataset: dsDirs) {
+        const std::string normArgsDataDir = (fs::path(inputDir) / dataset).string();
+        const std::string normArgsTargetDir = (fs::path(redPajamaNormDir) / dataset).string();
         int idx = -1;
-
-        normalizeText(normArgsDataDir, dataset, normArgsTargetDir, isZst, idx);
+        NormalizeText normalize(normArgsDataDir, normArgsTargetDir, idx);
+        normalize.run();
     }
+
 
     return 0;
 }

@@ -17,15 +17,15 @@ struct Args {
 
 class NormalizeText {
 public:
-    NormalizeText(const std::string& data_dir, const std::string& target_dir, bool zst, int idx);
-    void run(Args args);
+    NormalizeText(const std::string &data_dir, const std::string &target_dir, int idx);
+
+    void run();
 
 private:
-    void recreate_dataset(const std::vector<std::string>& files, const Args& args, int process_no, std::mutex& pbar_mutex);
+    void recreate_dataset(const std::vector<std::string> &files, int process_no, std::mutex &pbar_mutex);
 
     std::string data_dir_;
     std::string target_dir_;
-    bool zst_;
     int idx_;
 };
 

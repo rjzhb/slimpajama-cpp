@@ -13,6 +13,7 @@ include_directories(${GTEST_INCLUDE_DIRS})
 # add include
 include_directories(${PROJECT_SOURCE_DIR}/third_party/gtest/include)
 include_directories(${PROJECT_SOURCE_DIR}/src/**/)
+include_directories(${PROJECT_SOURCE_DIR}/src/preprocessing/*)
 include_directories(
         /usr/include/unicode
 )
