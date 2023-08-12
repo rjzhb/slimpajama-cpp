@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "slimpajama"
+			"path" : "test/testMultiple"
 		}
 	],
 	"backtrace" : 1,
@@ -16,6 +16,7 @@
 		],
 		"files" : 
 		[
+			"test/CMakeLists.txt",
 			"CMakeLists.txt"
 		],
 		"nodes" : 
@@ -26,32 +27,41 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 23,
+				"line" : 2,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 28,
+				"line" : 7,
 				"parent" : 0
 			},
 			{
+				"file" : 1
+			},
+			{
 				"command" : 2,
-				"file" : 0,
+				"file" : 1,
 				"line" : 14,
-				"parent" : 0
+				"parent" : 3
 			},
 			{
 				"command" : 2,
-				"file" : 0,
+				"file" : 1,
 				"line" : 15,
-				"parent" : 0
+				"parent" : 3
 			},
 			{
 				"command" : 2,
-				"file" : 0,
+				"file" : 1,
 				"line" : 16,
-				"parent" : 0
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 17,
+				"parent" : 3
 			}
 		]
 	},
@@ -64,36 +74,29 @@
 					"fragment" : "-g"
 				},
 				{
+					"backtrace" : 2,
+					"fragment" : "-DGTEST_HAS_PTHREAD=1"
+				},
+				{
 					"fragment" : "-std=gnu++14"
-				}
-			],
-			"defines" : 
-			[
-				{
-					"backtrace" : 2,
-					"define" : "BOOST_ALL_NO_LIB"
-				},
-				{
-					"backtrace" : 2,
-					"define" : "BOOST_FILESYSTEM_DYN_LINK"
-				},
-				{
-					"backtrace" : 2,
-					"define" : "BOOST_SYSTEM_DYN_LINK"
 				}
 			],
 			"includes" : 
 			[
 				{
-					"backtrace" : 3,
+					"backtrace" : 4,
 					"path" : "/home/rjzhb/Project/slimpajama-cpp/third_party/gtest/include"
 				},
 				{
-					"backtrace" : 4,
+					"backtrace" : 5,
 					"path" : "/home/rjzhb/Project/slimpajama-cpp/src/**"
 				},
 				{
-					"backtrace" : 5,
+					"backtrace" : 6,
+					"path" : "/home/rjzhb/Project/slimpajama-cpp/src/preprocessing/*"
+				},
+				{
+					"backtrace" : 7,
 					"path" : "/usr/include/unicode"
 				}
 			],
@@ -102,18 +105,24 @@
 			{
 				"backtraces" : 
 				[
-					1
+					2
 				],
 				"standard" : "14"
 			},
 			"sourceIndexes" : 
 			[
-				0,
-				2
+				0
 			]
 		}
 	],
-	"id" : "slimpajama::@6890427a1f51a3e7e1df",
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "slimpajama_lib::@145eef247bfb46b6828c"
+		}
+	],
+	"id" : "testMultiple::@36f028580bb02cc8272a",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -128,58 +137,43 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "/usr/lib/x86_64-linux-gnu/libboost_system.so.1.74.0",
+				"fragment" : "../src/libslimpajama_lib.a",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "/usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.74.0",
+				"fragment" : "-lgtest",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-ljsoncpp",
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libgtest.a",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-licudata",
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libgtest_main.a",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-licui18n",
+				"fragment" : "-lpthread",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-licuio",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 2,
-				"fragment" : "-licutest",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 2,
-				"fragment" : "-licutu",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 2,
-				"fragment" : "-licuuc",
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libgtest.a",
 				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
-	"name" : "slimpajama",
-	"nameOnDisk" : "slimpajama",
+	"name" : "testMultiple",
+	"nameOnDisk" : "testMultiple",
 	"paths" : 
 	{
-		"build" : ".",
-		"source" : "."
+		"build" : "test",
+		"source" : "test"
 	},
 	"sourceGroups" : 
 	[
@@ -187,15 +181,7 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0,
-				2
-			]
-		},
-		{
-			"name" : "Header Files",
-			"sourceIndexes" : 
-			[
-				1
+				0
 			]
 		}
 	],
@@ -204,18 +190,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "benchmark.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "src/preprocessing/normalize_text.h",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/preprocessing/normalize_text.cpp",
+			"path" : "test/MultipleTest.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

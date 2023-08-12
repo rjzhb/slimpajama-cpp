@@ -56,6 +56,12 @@
 				"file" : 1,
 				"line" : 16,
 				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 17,
+				"parent" : 3
 			}
 		]
 	},
@@ -87,6 +93,10 @@
 				},
 				{
 					"backtrace" : 6,
+					"path" : "/home/rjzhb/Project/slimpajama-cpp/src/preprocessing/*"
+				},
+				{
+					"backtrace" : 7,
 					"path" : "/usr/include/unicode"
 				}
 			],

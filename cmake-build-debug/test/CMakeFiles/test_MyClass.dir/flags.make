@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/rjzhb/Project/slimpajama-cpp/third_party/gtest/include -I"/home/rjzhb/Project/slimpajama-cpp/src/**" -I/usr/include/unicode
+CXX_INCLUDES = -I/home/rjzhb/Project/slimpajama-cpp/third_party/gtest/include -I"/home/rjzhb/Project/slimpajama-cpp/src/**" -I"/home/rjzhb/Project/slimpajama-cpp/src/preprocessing/*" -I/usr/include/unicode
 
 CXX_FLAGS = -g -DGTEST_HAS_PTHREAD=1 -std=gnu++14
 

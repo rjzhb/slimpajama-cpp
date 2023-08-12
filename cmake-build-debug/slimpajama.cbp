@@ -29,6 +29,7 @@
 					<Add option="-DBOOST_FILESYSTEM_DYN_LINK"/>
 					<Add directory="/home/rjzhb/Project/slimpajama-cpp/third_party/gtest/include"/>
 					<Add directory="/home/rjzhb/Project/slimpajama-cpp/src/**"/>
+					<Add directory="/home/rjzhb/Project/slimpajama-cpp/src/preprocessing/*"/>
 					<Add directory="/usr/include/unicode"/>
 					<Add directory="/usr/include/c++/11"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
@@ -57,6 +58,7 @@
 					<Add option="-DBOOST_FILESYSTEM_DYN_LINK"/>
 					<Add directory="/home/rjzhb/Project/slimpajama-cpp/third_party/gtest/include"/>
 					<Add directory="/home/rjzhb/Project/slimpajama-cpp/src/**"/>
+					<Add directory="/home/rjzhb/Project/slimpajama-cpp/src/preprocessing/*"/>
 					<Add directory="/usr/include/unicode"/>
 					<Add directory="/usr/include/c++/11"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
@@ -102,6 +104,7 @@
 				<Compiler>
 					<Add directory="/home/rjzhb/Project/slimpajama-cpp/third_party/gtest/include"/>
 					<Add directory="/home/rjzhb/Project/slimpajama-cpp/src/**"/>
+					<Add directory="/home/rjzhb/Project/slimpajama-cpp/src/preprocessing/*"/>
 					<Add directory="/usr/include/unicode"/>
 					<Add directory="/usr/include/c++/11"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
@@ -127,6 +130,7 @@
 				<Compiler>
 					<Add directory="/home/rjzhb/Project/slimpajama-cpp/third_party/gtest/include"/>
 					<Add directory="/home/rjzhb/Project/slimpajama-cpp/src/**"/>
+					<Add directory="/home/rjzhb/Project/slimpajama-cpp/src/preprocessing/*"/>
 					<Add directory="/usr/include/unicode"/>
 					<Add directory="/usr/include/c++/11"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
@@ -152,6 +156,7 @@
 				<Compiler>
 					<Add directory="/home/rjzhb/Project/slimpajama-cpp/third_party/gtest/include"/>
 					<Add directory="/home/rjzhb/Project/slimpajama-cpp/src/**"/>
+					<Add directory="/home/rjzhb/Project/slimpajama-cpp/src/preprocessing/*"/>
 					<Add directory="/usr/include/unicode"/>
 					<Add directory="/usr/include/c++/11"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
@@ -177,6 +182,7 @@
 				<Compiler>
 					<Add directory="/home/rjzhb/Project/slimpajama-cpp/third_party/gtest/include"/>
 					<Add directory="/home/rjzhb/Project/slimpajama-cpp/src/**"/>
+					<Add directory="/home/rjzhb/Project/slimpajama-cpp/src/preprocessing/*"/>
 					<Add directory="/usr/include/unicode"/>
 					<Add directory="/usr/include/c++/11"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
@@ -202,6 +208,7 @@
 				<Compiler>
 					<Add directory="/home/rjzhb/Project/slimpajama-cpp/third_party/gtest/include"/>
 					<Add directory="/home/rjzhb/Project/slimpajama-cpp/src/**"/>
+					<Add directory="/home/rjzhb/Project/slimpajama-cpp/src/preprocessing/*"/>
 					<Add directory="/usr/include/unicode"/>
 					<Add directory="/usr/include/c++/11"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
@@ -227,6 +234,7 @@
 				<Compiler>
 					<Add directory="/home/rjzhb/Project/slimpajama-cpp/third_party/gtest/include"/>
 					<Add directory="/home/rjzhb/Project/slimpajama-cpp/src/**"/>
+					<Add directory="/home/rjzhb/Project/slimpajama-cpp/src/preprocessing/*"/>
 					<Add directory="/usr/include/unicode"/>
 					<Add directory="/usr/include/c++/11"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>

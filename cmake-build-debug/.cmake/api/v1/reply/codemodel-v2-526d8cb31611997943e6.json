@@ -80,28 +80,28 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "slimpajama::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-slimpajama-Debug-5d316179821e41e81b4c.json",
+					"jsonFile" : "target-slimpajama-Debug-0c4c4179741088710f41.json",
 					"name" : "slimpajama",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 1,
 					"id" : "slimpajama_lib::@145eef247bfb46b6828c",
-					"jsonFile" : "target-slimpajama_lib-Debug-0755e7de027939aaa625.json",
+					"jsonFile" : "target-slimpajama_lib-Debug-e79f4d54e54718dc79bb.json",
 					"name" : "slimpajama_lib",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "testMultiple::@36f028580bb02cc8272a",
-					"jsonFile" : "target-testMultiple-Debug-802b5f9e0365b06e3e3b.json",
+					"jsonFile" : "target-testMultiple-Debug-ecb025bea56728fddbc8.json",
 					"name" : "testMultiple",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "test_MyClass::@36f028580bb02cc8272a",
-					"jsonFile" : "target-test_MyClass-Debug-c9b2c000c5e783a17e33.json",
+					"jsonFile" : "target-test_MyClass-Debug-ebd960ae09ff917f0b95.json",
 					"name" : "test_MyClass",
 					"projectIndex" : 0
 				}
