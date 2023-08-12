@@ -4,7 +4,7 @@ project(slimpajama)
 set(CMAKE_CXX_STANDARD 14)
 
 find_package(GTest REQUIRED)
-find_package(Boost REQUIRED COMPONENTS system filesystem)
+find_package(Boost REQUIRED COMPONENTS system filesystem serialization)
 find_package(jsoncpp REQUIRED)
 
 
@@ -24,6 +24,8 @@ add_subdirectory(test)
 add_executable(slimpajama benchmark.cpp
         src/preprocessing/normalize_text.h
         src/preprocessing/normalize_text.cpp
+        src/preprocessing/filter.h
+        src/preprocessing/filter.cpp
         )
 target_include_directories(slimpajama PRIVATE ${Boost_INCLUDE_DIRS})
 target_link_libraries(slimpajama

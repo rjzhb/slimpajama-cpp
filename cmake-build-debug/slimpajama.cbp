@@ -5,7 +5,7 @@
 		<Option title="slimpajama"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\GTest\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Boost-1.74.0\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_headers-1.74.0\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_system-1.74.0\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_filesystem-1.74.0\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\jsoncpp\;CMake Files\src\;CMake Files\test\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\GTest\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Boost-1.74.0\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_headers-1.74.0\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_system-1.74.0\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_filesystem-1.74.0\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_serialization-1.74.0\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\jsoncpp\;CMake Files\src\;CMake Files\test\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug"/>
@@ -27,6 +27,7 @@
 					<Add option="-DBOOST_ALL_NO_LIB"/>
 					<Add option="-DBOOST_SYSTEM_DYN_LINK"/>
 					<Add option="-DBOOST_FILESYSTEM_DYN_LINK"/>
+					<Add option="-DBOOST_SERIALIZATION_DYN_LINK"/>
 					<Add directory="/home/rjzhb/Project/slimpajama-cpp/third_party/gtest/include"/>
 					<Add directory="/home/rjzhb/Project/slimpajama-cpp/src/**"/>
 					<Add directory="/home/rjzhb/Project/slimpajama-cpp/src/preprocessing/*"/>
@@ -56,6 +57,7 @@
 					<Add option="-DBOOST_ALL_NO_LIB"/>
 					<Add option="-DBOOST_SYSTEM_DYN_LINK"/>
 					<Add option="-DBOOST_FILESYSTEM_DYN_LINK"/>
+					<Add option="-DBOOST_SERIALIZATION_DYN_LINK"/>
 					<Add directory="/home/rjzhb/Project/slimpajama-cpp/third_party/gtest/include"/>
 					<Add directory="/home/rjzhb/Project/slimpajama-cpp/src/**"/>
 					<Add directory="/home/rjzhb/Project/slimpajama-cpp/src/preprocessing/*"/>
@@ -255,6 +257,14 @@
 		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/benchmark.cpp">
 			<Option target="slimpajama"/>
 		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/src/preprocessing/filter.cpp">
+			<Option target="slimpajama"/>
+			<Option target="slimpajama_lib"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/src/preprocessing/filter.h">
+			<Option target="slimpajama"/>
+			<Option target="slimpajama_lib"/>
+		</Unit>
 		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/src/preprocessing/normalize_text.cpp">
 			<Option target="slimpajama"/>
 			<Option target="slimpajama_lib"/>
@@ -322,6 +332,18 @@
 		</Unit>
 		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_filesystem-1.74.0/libboost_filesystem-variant-static.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_filesystem-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_serialization-1.74.0/boost_serialization-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_serialization-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_serialization-1.74.0/boost_serialization-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_serialization-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_serialization-1.74.0/libboost_serialization-variant-shared.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_serialization-1.74.0\"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_serialization-1.74.0/libboost_serialization-variant-static.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_serialization-1.74.0\"/>
 		</Unit>
 		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/../../../../usr/lib/x86_64-linux-gnu/cmake/jsoncpp/jsoncpp-namespaced-targets.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\jsoncpp\"/>

@@ -130,6 +130,30 @@ slimpajama_lib/fast:
 	cd /home/rjzhb/Project/slimpajama-cpp/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/slimpajama_lib.dir/build.make src/CMakeFiles/slimpajama_lib.dir/build
 .PHONY : slimpajama_lib/fast
 
+preprocessing/filter.o: preprocessing/filter.cpp.o
+.PHONY : preprocessing/filter.o
+
+# target to build an object file
+preprocessing/filter.cpp.o:
+	cd /home/rjzhb/Project/slimpajama-cpp/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/slimpajama_lib.dir/build.make src/CMakeFiles/slimpajama_lib.dir/preprocessing/filter.cpp.o
+.PHONY : preprocessing/filter.cpp.o
+
+preprocessing/filter.i: preprocessing/filter.cpp.i
+.PHONY : preprocessing/filter.i
+
+# target to preprocess a source file
+preprocessing/filter.cpp.i:
+	cd /home/rjzhb/Project/slimpajama-cpp/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/slimpajama_lib.dir/build.make src/CMakeFiles/slimpajama_lib.dir/preprocessing/filter.cpp.i
+.PHONY : preprocessing/filter.cpp.i
+
+preprocessing/filter.s: preprocessing/filter.cpp.s
+.PHONY : preprocessing/filter.s
+
+# target to generate assembly for a file
+preprocessing/filter.cpp.s:
+	cd /home/rjzhb/Project/slimpajama-cpp/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/slimpajama_lib.dir/build.make src/CMakeFiles/slimpajama_lib.dir/preprocessing/filter.cpp.s
+.PHONY : preprocessing/filter.cpp.s
+
 preprocessing/normalize_text.o: preprocessing/normalize_text.cpp.o
 .PHONY : preprocessing/normalize_text.o
 
@@ -163,6 +187,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... slimpajama_lib"
+	@echo "... preprocessing/filter.o"
+	@echo "... preprocessing/filter.i"
+	@echo "... preprocessing/filter.s"
 	@echo "... preprocessing/normalize_text.o"
 	@echo "... preprocessing/normalize_text.i"
 	@echo "... preprocessing/normalize_text.s"

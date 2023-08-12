@@ -2,7 +2,9 @@
 #include <vector>
 #include <string>
 #include <boost/filesystem.hpp>
+#include <numeric>
 #include "src/preprocessing/normalize_text.h"
+#include "src/preprocessing/filter.h"
 
 namespace fs = boost::filesystem;
 
@@ -44,15 +46,17 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    std::string inputDir = argv[1];
-    std::string redPajamaNormDir = (fs::path(inputDir) / "RedPajama_norm").string();
-    fs::create_directories(redPajamaNormDir);
-
     std::vector<std::string> dsDirs = ds_names;
     dsDirs.erase(std::remove(dsDirs.begin(), dsDirs.end(), "common_crawl"), dsDirs.end());
     for (const auto &cc: cc_years) {
         dsDirs.push_back("common_crawl/" + cc);
     }
+
+    //norm
+    std::string inputDir = argv[1];
+    std::string redPajamaNormDir = (fs::path(inputDir) / "RedPajama_norm").string();
+    fs::create_directories(redPajamaNormDir);
+
 
     for (const auto &dataset: dsDirs) {
         const std::string normArgsDataDir = (fs::path(inputDir) / dataset).string();
@@ -61,6 +65,11 @@ int main(int argc, char *argv[]) {
         NormalizeText normalize(normArgsDataDir, normArgsTargetDir, idx);
         normalize.run();
     }
+
+    //filter docs
+    std::string short_docs = (fs::path(redPajamaNormDir) / "red_pj_filter.pickle").string();
+    Filter filter(redPajamaNormDir, short_docs, std::accumulate(n_documents.begin(), n_documents.end(), 0), "all", 200);
+    filter.filter_dataset();
 
 
     return 0;

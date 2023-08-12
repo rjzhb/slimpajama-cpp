@@ -113,7 +113,7 @@ void Filter::filter_dataset() {
 
     for (int process_id = 0; process_id < n_proc; process_id++) {
         threads.emplace_back([&docs_queue, n_proc, process_id, &short_documents, this]() {
-            get_short_documents(input_dir_, threshold_, n_proc, process_id, docs_queue, dataset_name_, short_documents);
+            get_short_documents(input_dir_, threshold_, n_proc, process_id, docs_queue, dataset_name_);
         });
     }
 

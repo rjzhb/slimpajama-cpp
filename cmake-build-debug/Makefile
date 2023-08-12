@@ -192,6 +192,30 @@ benchmark.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/slimpajama.dir/build.make CMakeFiles/slimpajama.dir/benchmark.cpp.s
 .PHONY : benchmark.cpp.s
 
+src/preprocessing/filter.o: src/preprocessing/filter.cpp.o
+.PHONY : src/preprocessing/filter.o
+
+# target to build an object file
+src/preprocessing/filter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slimpajama.dir/build.make CMakeFiles/slimpajama.dir/src/preprocessing/filter.cpp.o
+.PHONY : src/preprocessing/filter.cpp.o
+
+src/preprocessing/filter.i: src/preprocessing/filter.cpp.i
+.PHONY : src/preprocessing/filter.i
+
+# target to preprocess a source file
+src/preprocessing/filter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slimpajama.dir/build.make CMakeFiles/slimpajama.dir/src/preprocessing/filter.cpp.i
+.PHONY : src/preprocessing/filter.cpp.i
+
+src/preprocessing/filter.s: src/preprocessing/filter.cpp.s
+.PHONY : src/preprocessing/filter.s
+
+# target to generate assembly for a file
+src/preprocessing/filter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slimpajama.dir/build.make CMakeFiles/slimpajama.dir/src/preprocessing/filter.cpp.s
+.PHONY : src/preprocessing/filter.cpp.s
+
 src/preprocessing/normalize_text.o: src/preprocessing/normalize_text.cpp.o
 .PHONY : src/preprocessing/normalize_text.o
 
@@ -231,6 +255,9 @@ help:
 	@echo "... benchmark.o"
 	@echo "... benchmark.i"
 	@echo "... benchmark.s"
+	@echo "... src/preprocessing/filter.o"
+	@echo "... src/preprocessing/filter.i"
+	@echo "... src/preprocessing/filter.s"
 	@echo "... src/preprocessing/normalize_text.o"
 	@echo "... src/preprocessing/normalize_text.i"
 	@echo "... src/preprocessing/normalize_text.s"

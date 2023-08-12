@@ -1,2 +1,2 @@
-/usr/bin/ar qc libslimpajama_lib.a CMakeFiles/slimpajama_lib.dir/preprocessing/normalize_text.cpp.o
+/usr/bin/ar qc libslimpajama_lib.a CMakeFiles/slimpajama_lib.dir/preprocessing/filter.cpp.o CMakeFiles/slimpajama_lib.dir/preprocessing/normalize_text.cpp.o
 /usr/bin/ranlib libslimpajama_lib.a
