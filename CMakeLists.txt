@@ -26,6 +26,8 @@ add_executable(slimpajama benchmark.cpp
         src/preprocessing/normalize_text.cpp
         src/preprocessing/filter.h
         src/preprocessing/filter.cpp
+        src/preprocessing/ToHash.h
+        src/preprocessing/ToHash.cpp
         )
 target_include_directories(slimpajama PRIVATE ${Boost_INCLUDE_DIRS})
 target_link_libraries(slimpajama
