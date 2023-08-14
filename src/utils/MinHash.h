@@ -16,46 +16,29 @@ class MinHash {
 public:
     int K; // number of hash functions
     std::vector<pair<unsigned short, unsigned short>> hf;  // hash functions
+    std::vector<unsigned short> hashvalues; // hash values
 
 public:
-    MinHash(const int _K) : K(_K) {
-        // the seeds are 1 to K
-        for(int i = 1 ;i<=_K; i++){
+    MinHash(const int _K) : K(_K), hashvalues(_K, std::numeric_limits<unsigned short>::max()) {
+        // Generate hash functions
+        for (int i = 1; i <= _K; i++) {
             generateHashFunc(i, hf);
         }
-
-        // for(int i = 1 ;i<=_K; i++){
-        //     cout<<hf[i-1].first<<" "<< hf[i-1].second<<endl;
-        // }
     }
 
+
+
     void update(const std::string& b) {
-        uint64_t hv = hashfunc(b);
+        // Convert the string to an unsigned short value
+        unsigned short word = static_cast<unsigned short>(std::hash<std::string>{}(b));
+
         for (int i = 0; i < K; ++i) {
-            unsigned short hash_val = hval(hf[i], hv);
+            unsigned short hash_val = hval(hf[i], word);
             hashvalues[i] = std::min(hashvalues[i], hash_val);
         }
     }
 
 
-    std::vector<unsigned short> getMinHashes(const std::vector<unsigned short>& doc) {
-        if(doc.size() == 0){
-            return std::vector<unsigned short>();
-        }
-
-
-        std::vector<unsigned short> min_hashes(K, std::numeric_limits<unsigned short>::max());
-
-        for (unsigned short element : doc) {
-            for (int i = 0; i < K; ++i) {
-                unsigned short hash_val = hval(hf[i], element);
-                // cout<<"i"<<i<<" hash_val:" << hash_val<<endl;
-                min_hashes[i] = std::min(min_hashes[i], hash_val);
-            }
-        }
-
-        return min_hashes;
-    }
 };
 
 #endif //SLIMPAJAMA_MINHASH_H

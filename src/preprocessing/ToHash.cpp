@@ -37,18 +37,19 @@ std::vector<std::string> ToHash::get_features(const std::string &s, int width) {
 
 namespace fs = boost::filesystem;
 
-void ToHash::get_documents(const std::string &input_dir, int index_start, int index_end, const std::string &output_dir,
-                           const std::string &dataset_name) {
+std::vector<ToHash::Document> ToHash::get_documents(const std::string& input_dir, int index_start, int index_end, const std::string& output_dir, const std::string& dataset_name) {
+    std::vector<Document> documents;
+
     std::vector<std::string> files;
     std::string extension = ".jsonl";
 
-    // Read and filter files
-    for (const auto &entry: fs::directory_iterator(input_dir)) {
+    for (const auto& entry : std::filesystem::directory_iterator(input_dir)) {
         std::string file_path = entry.path().string();
         if (file_path.find(extension) != std::string::npos) {
             files.push_back(file_path);
         }
     }
+
     std::sort(files.begin(), files.end());
 
     for (int i = index_start; i < std::min(index_end, static_cast<int>(files.size())); i++) {
@@ -64,29 +65,26 @@ void ToHash::get_documents(const std::string &input_dir, int index_start, int in
             output_name = dataset_name + "/" + file_name;
         }
 
-        if (dataset_name == "common_crawl") {
-            std::ifstream file(file_path);
-            Json::Value json;
-            Json::Reader reader;
-            while (reader.parse(file, json)) {
-                std::string doc = json["text"].asString();
-                // Process the document
-                // ...
-            }
-        } else {
-            std::ifstream file(file_path);
-            Json::Value json;
-            Json::Reader reader;
-            while (file >> json) {
-                std::string doc = json["text"].asString();
-                // Process the document
-                // ...
-            }
+        std::ifstream file(file_path);
+        Json::Value json;
+        Json::Reader reader;
+        while (file >> json) {
+            std::string doc = json["text"].asString();
+
+            Document document;
+            document.text = doc;
+            document.file_path = file_path;
+            document.doc_id = documents.size();
+
+            documents.push_back(document);
         }
     }
+
+    return documents;
 }
 
-void ToHash::output_results(const std::string &output_dir, const std::vector<int> &results, int chunk_id, int iter) {
+
+void ToHash::output_results(const std::string &output_dir, std::vector<std::unordered_map<std::string, std::string>> results, int chunk_id, int iter) {
     std::ostringstream oss;
     oss << output_dir << "/minhash_nfc/" << iter << "-" << chunk_id << ".pickle";
     std::string file_path = oss.str();
@@ -132,13 +130,25 @@ ToHash::to_minhash(const std::vector<Document> &documents, const std::string &ou
 
         std::vector<std::string> features = get_features(text, width);
         for (const std::string &feature: features) {
-            boost::hash_combine(m, feature);
+            m.update(feature);
         }
 
         std::unordered_map<std::string, std::string> bucket;
         bucket["file_name"] = output_name;
         bucket["doc_id"] = std::to_string(doc_id);
-        bucket["hash"] = m.toString();
+
+        std::vector<unsigned short> hashValues = m.hashvalues;
+
+        std::string hashString;
+        for (const unsigned short& value : hashValues) {
+            hashString += std::to_string(value) + ",";
+        }
+
+        if (!hashString.empty()) {
+            hashString.pop_back();
+        }
+
+        bucket["hash"] = hashString;
 
         buckets.push_back(bucket);
 
@@ -146,4 +156,61 @@ ToHash::to_minhash(const std::vector<Document> &documents, const std::string &ou
     }
 
     return buckets;
+}
+
+
+template <typename T>
+std::vector<std::vector<T>> chunked(const std::vector<T>& input, size_t chunk_size) {
+    size_t num_chunks = (input.size() + chunk_size - 1) / chunk_size;
+    std::vector<std::vector<T>> chunks(num_chunks);
+
+    // 计算线程数量
+    int cpu_count = std::thread::hardware_concurrency();
+
+    // 并行处理
+    std::vector<std::thread> threads;
+    for (int i = 0; i < cpu_count; ++i) {
+        threads.emplace_back([i, cpu_count, &input, chunk_size, &chunks]() {
+            size_t start = i * chunk_size;
+            size_t end = std::min(start + chunk_size, input.size());
+            std::vector<T> chunk(input.begin() + start, input.begin() + end);
+            chunks[i] = std::move(chunk);
+        });
+    }
+
+    // 等待所有线程完成
+    for (auto& thread : threads) {
+        thread.join();
+    }
+
+    return chunks;
+}
+
+void ToHash::generate_hashes() {
+    if (!boost::filesystem::exists(output_dir_ + "/minhash_nfc")) {
+        boost::filesystem::create_directory(output_dir_ + "/minhash_nfc");
+    }
+
+    std::vector<Document> documents = get_documents(input_dir_, index_start_, index_end_, output_dir_, dataset_name_);
+    std::vector<std::unordered_map<std::string, std::string>> results;
+    int chunk_id = 0;
+    int cpu_count = std::thread::hardware_concurrency();
+    std::vector<std::vector<Document>> chunks = chunked(documents, n_docs_ / cpu_count);
+
+    for (int i = 0; i < cpu_count; ++i) {
+        std::vector<std::unordered_map<std::string, std::string>> chunk_results = to_minhash(chunks[i], output_dir_, w_, dataset_name_, n_docs_ / cpu_count);
+        results.insert(results.end(), chunk_results.begin(), chunk_results.end());
+
+        if (results.size() == k_) {
+            output_results(output_dir_, results, chunk_id, iter_);
+            results.clear();
+            chunk_id++;
+        }
+    }
+
+    if (!results.empty()) {
+        output_results(output_dir_, results, chunk_id, iter_);
+    }
+
+    }
 }

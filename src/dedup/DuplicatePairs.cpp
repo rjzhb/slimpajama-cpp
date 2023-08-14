@@ -91,10 +91,19 @@ void DuplicatePairs::get_hashes(const std::vector<std::string> &files,
             ia >> items;
             for (const auto &item: items) {
                 std::string key = item.file_name + "@" + std::to_string(item.doc_id);
-                LeanMinHash minhash(item.hash);
+                std::vector<unsigned short> hash_values;
+                std::string hash_string = item.hash;
+                std::vector<std::string> hash_components;
+                boost::split(hash_components, hash_string, boost::is_any_of(","));
+                for (const std::string& component : hash_components) {
+                    auto value = boost::lexical_cast<unsigned short>(component);
+                    hash_values.push_back(value);
+                }
                 for (size_t i = 0; i < doc_queues.size(); ++i) {
-                    std::string H = byteswap(minhash.hashvalues.substr(i * r, r));
-                    doc_queues[i].push(std::make_pair(key, H));
+                    std::vector<unsigned short> H(hash_values.begin() + i * r, hash_values.begin() + (i + 1) * r);
+                    std::string H_string(reinterpret_cast<const char*>(H.data()), H.size() * sizeof(unsigned short));
+                    std::string swapped_H = byteswap(H_string);
+                    doc_queues[i].push(std::make_pair(key, swapped_H));
                 }
             }
             fin.close();

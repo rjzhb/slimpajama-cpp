@@ -257,6 +257,14 @@
 		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/benchmark.cpp">
 			<Option target="slimpajama"/>
 		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/src/dedup/DuplicatePairs.cpp">
+			<Option target="slimpajama"/>
+			<Option target="slimpajama_lib"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/src/dedup/DuplicatePairs.h">
+			<Option target="slimpajama"/>
+			<Option target="slimpajama_lib"/>
+		</Unit>
 		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/src/preprocessing/ToHash.cpp">
 			<Option target="slimpajama"/>
 			<Option target="slimpajama_lib"/>
@@ -278,6 +286,18 @@
 			<Option target="slimpajama_lib"/>
 		</Unit>
 		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/src/preprocessing/normalize_text.h">
+			<Option target="slimpajama"/>
+			<Option target="slimpajama_lib"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/src/utils/MinHash.h">
+			<Option target="slimpajama"/>
+			<Option target="slimpajama_lib"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/src/utils/Utils.cpp">
+			<Option target="slimpajama"/>
+			<Option target="slimpajama_lib"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/src/utils/Utils.h">
 			<Option target="slimpajama"/>
 			<Option target="slimpajama_lib"/>
 		</Unit>

@@ -21,6 +21,9 @@
 #include <boost/functional/hash.hpp>
 #include <boost/algorithm/string.hpp>
 #include <boost/progress.hpp>
+#include <boost/serialization/unordered_map.hpp>
+#include <boost/serialization/unordered_set.hpp>
+#include <boost/lexical_cast.hpp>
 
 class ToHash {
 public:
@@ -34,13 +37,15 @@ public:
     ToHash(std::string dataset_name, std::string input_dir, std::string output_dir, int n_docs, int iter, int index_start, int index_end, int w, int k)
             : dataset_name_(std::move(dataset_name)), input_dir_(std::move(input_dir)), output_dir_(std::move(output_dir)), n_docs_(n_docs), iter_(iter), index_start_(index_start), index_end_(index_end), w_(w), k_(k) {}
 
-    void get_documents(const std::string& input_dir, int index_start, int index_end, const std::string& output_dir, const std::string& dataset_name);
+    std::vector<Document> get_documents(const std::string& input_dir, int index_start, int index_end, const std::string& output_dir, const std::string& dataset_name);
 
     std::vector<std::string> get_features(const std::string& s, int width);
 
-    void output_results(const std::string& output_dir, const std::vector<int>& results, int chunk_id, int iter);
+    void output_results(const std::string& output_dir, std::vector<std::unordered_map<std::string, std::string>>, int chunk_id, int iter);
 
     std::vector<std::unordered_map<std::string, std::string>> to_minhash(const std::vector<Document>& documents, const std::string& output_dir, int width, const std::string& dataset_name, int n_docs);
+
+    void generate_hashes();
 
 private:
     std::string dataset_name_;

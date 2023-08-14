@@ -69,10 +69,24 @@ include src/CMakeFiles/slimpajama_lib.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/CMakeFiles/slimpajama_lib.dir/flags.make
 
+src/CMakeFiles/slimpajama_lib.dir/dedup/DuplicatePairs.cpp.o: src/CMakeFiles/slimpajama_lib.dir/flags.make
+src/CMakeFiles/slimpajama_lib.dir/dedup/DuplicatePairs.cpp.o: ../src/dedup/DuplicatePairs.cpp
+src/CMakeFiles/slimpajama_lib.dir/dedup/DuplicatePairs.cpp.o: src/CMakeFiles/slimpajama_lib.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/slimpajama_lib.dir/dedup/DuplicatePairs.cpp.o"
+	cd /home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/slimpajama_lib.dir/dedup/DuplicatePairs.cpp.o -MF CMakeFiles/slimpajama_lib.dir/dedup/DuplicatePairs.cpp.o.d -o CMakeFiles/slimpajama_lib.dir/dedup/DuplicatePairs.cpp.o -c /home/rjzhb/Project/slimpajama-cpp/src/dedup/DuplicatePairs.cpp
+
+src/CMakeFiles/slimpajama_lib.dir/dedup/DuplicatePairs.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/slimpajama_lib.dir/dedup/DuplicatePairs.cpp.i"
+	cd /home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rjzhb/Project/slimpajama-cpp/src/dedup/DuplicatePairs.cpp > CMakeFiles/slimpajama_lib.dir/dedup/DuplicatePairs.cpp.i
+
+src/CMakeFiles/slimpajama_lib.dir/dedup/DuplicatePairs.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/slimpajama_lib.dir/dedup/DuplicatePairs.cpp.s"
+	cd /home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rjzhb/Project/slimpajama-cpp/src/dedup/DuplicatePairs.cpp -o CMakeFiles/slimpajama_lib.dir/dedup/DuplicatePairs.cpp.s
+
 src/CMakeFiles/slimpajama_lib.dir/preprocessing/ToHash.cpp.o: src/CMakeFiles/slimpajama_lib.dir/flags.make
 src/CMakeFiles/slimpajama_lib.dir/preprocessing/ToHash.cpp.o: ../src/preprocessing/ToHash.cpp
 src/CMakeFiles/slimpajama_lib.dir/preprocessing/ToHash.cpp.o: src/CMakeFiles/slimpajama_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/slimpajama_lib.dir/preprocessing/ToHash.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/slimpajama_lib.dir/preprocessing/ToHash.cpp.o"
 	cd /home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/slimpajama_lib.dir/preprocessing/ToHash.cpp.o -MF CMakeFiles/slimpajama_lib.dir/preprocessing/ToHash.cpp.o.d -o CMakeFiles/slimpajama_lib.dir/preprocessing/ToHash.cpp.o -c /home/rjzhb/Project/slimpajama-cpp/src/preprocessing/ToHash.cpp
 
 src/CMakeFiles/slimpajama_lib.dir/preprocessing/ToHash.cpp.i: cmake_force
@@ -86,7 +100,7 @@ src/CMakeFiles/slimpajama_lib.dir/preprocessing/ToHash.cpp.s: cmake_force
 src/CMakeFiles/slimpajama_lib.dir/preprocessing/filter.cpp.o: src/CMakeFiles/slimpajama_lib.dir/flags.make
 src/CMakeFiles/slimpajama_lib.dir/preprocessing/filter.cpp.o: ../src/preprocessing/filter.cpp
 src/CMakeFiles/slimpajama_lib.dir/preprocessing/filter.cpp.o: src/CMakeFiles/slimpajama_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/slimpajama_lib.dir/preprocessing/filter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/slimpajama_lib.dir/preprocessing/filter.cpp.o"
 	cd /home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/slimpajama_lib.dir/preprocessing/filter.cpp.o -MF CMakeFiles/slimpajama_lib.dir/preprocessing/filter.cpp.o.d -o CMakeFiles/slimpajama_lib.dir/preprocessing/filter.cpp.o -c /home/rjzhb/Project/slimpajama-cpp/src/preprocessing/filter.cpp
 
 src/CMakeFiles/slimpajama_lib.dir/preprocessing/filter.cpp.i: cmake_force
@@ -100,7 +114,7 @@ src/CMakeFiles/slimpajama_lib.dir/preprocessing/filter.cpp.s: cmake_force
 src/CMakeFiles/slimpajama_lib.dir/preprocessing/normalize_text.cpp.o: src/CMakeFiles/slimpajama_lib.dir/flags.make
 src/CMakeFiles/slimpajama_lib.dir/preprocessing/normalize_text.cpp.o: ../src/preprocessing/normalize_text.cpp
 src/CMakeFiles/slimpajama_lib.dir/preprocessing/normalize_text.cpp.o: src/CMakeFiles/slimpajama_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/slimpajama_lib.dir/preprocessing/normalize_text.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/slimpajama_lib.dir/preprocessing/normalize_text.cpp.o"
 	cd /home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/slimpajama_lib.dir/preprocessing/normalize_text.cpp.o -MF CMakeFiles/slimpajama_lib.dir/preprocessing/normalize_text.cpp.o.d -o CMakeFiles/slimpajama_lib.dir/preprocessing/normalize_text.cpp.o -c /home/rjzhb/Project/slimpajama-cpp/src/preprocessing/normalize_text.cpp
 
 src/CMakeFiles/slimpajama_lib.dir/preprocessing/normalize_text.cpp.i: cmake_force
@@ -111,21 +125,39 @@ src/CMakeFiles/slimpajama_lib.dir/preprocessing/normalize_text.cpp.s: cmake_forc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/slimpajama_lib.dir/preprocessing/normalize_text.cpp.s"
 	cd /home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rjzhb/Project/slimpajama-cpp/src/preprocessing/normalize_text.cpp -o CMakeFiles/slimpajama_lib.dir/preprocessing/normalize_text.cpp.s
 
+src/CMakeFiles/slimpajama_lib.dir/utils/Utils.cpp.o: src/CMakeFiles/slimpajama_lib.dir/flags.make
+src/CMakeFiles/slimpajama_lib.dir/utils/Utils.cpp.o: ../src/utils/Utils.cpp
+src/CMakeFiles/slimpajama_lib.dir/utils/Utils.cpp.o: src/CMakeFiles/slimpajama_lib.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/CMakeFiles/slimpajama_lib.dir/utils/Utils.cpp.o"
+	cd /home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/slimpajama_lib.dir/utils/Utils.cpp.o -MF CMakeFiles/slimpajama_lib.dir/utils/Utils.cpp.o.d -o CMakeFiles/slimpajama_lib.dir/utils/Utils.cpp.o -c /home/rjzhb/Project/slimpajama-cpp/src/utils/Utils.cpp
+
+src/CMakeFiles/slimpajama_lib.dir/utils/Utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/slimpajama_lib.dir/utils/Utils.cpp.i"
+	cd /home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rjzhb/Project/slimpajama-cpp/src/utils/Utils.cpp > CMakeFiles/slimpajama_lib.dir/utils/Utils.cpp.i
+
+src/CMakeFiles/slimpajama_lib.dir/utils/Utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/slimpajama_lib.dir/utils/Utils.cpp.s"
+	cd /home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rjzhb/Project/slimpajama-cpp/src/utils/Utils.cpp -o CMakeFiles/slimpajama_lib.dir/utils/Utils.cpp.s
+
 # Object files for target slimpajama_lib
 slimpajama_lib_OBJECTS = \
+"CMakeFiles/slimpajama_lib.dir/dedup/DuplicatePairs.cpp.o" \
 "CMakeFiles/slimpajama_lib.dir/preprocessing/ToHash.cpp.o" \
 "CMakeFiles/slimpajama_lib.dir/preprocessing/filter.cpp.o" \
-"CMakeFiles/slimpajama_lib.dir/preprocessing/normalize_text.cpp.o"
+"CMakeFiles/slimpajama_lib.dir/preprocessing/normalize_text.cpp.o" \
+"CMakeFiles/slimpajama_lib.dir/utils/Utils.cpp.o"
 
 # External object files for target slimpajama_lib
 slimpajama_lib_EXTERNAL_OBJECTS =
 
+src/libslimpajama_lib.a: src/CMakeFiles/slimpajama_lib.dir/dedup/DuplicatePairs.cpp.o
 src/libslimpajama_lib.a: src/CMakeFiles/slimpajama_lib.dir/preprocessing/ToHash.cpp.o
 src/libslimpajama_lib.a: src/CMakeFiles/slimpajama_lib.dir/preprocessing/filter.cpp.o
 src/libslimpajama_lib.a: src/CMakeFiles/slimpajama_lib.dir/preprocessing/normalize_text.cpp.o
+src/libslimpajama_lib.a: src/CMakeFiles/slimpajama_lib.dir/utils/Utils.cpp.o
 src/libslimpajama_lib.a: src/CMakeFiles/slimpajama_lib.dir/build.make
 src/libslimpajama_lib.a: src/CMakeFiles/slimpajama_lib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libslimpajama_lib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libslimpajama_lib.a"
 	cd /home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/src && $(CMAKE_COMMAND) -P CMakeFiles/slimpajama_lib.dir/cmake_clean_target.cmake
 	cd /home/rjzhb/Project/slimpajama-cpp/cmake-build-debug/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/slimpajama_lib.dir/link.txt --verbose=$(VERBOSE)
 

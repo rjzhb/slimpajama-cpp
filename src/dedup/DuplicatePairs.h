@@ -8,15 +8,20 @@
 #include <boost/filesystem.hpp>
 #include <fstream>
 #include <unordered_map>
+#include <iostream>
 #include <string>
 #include <chrono>
 #include <queue>
 #include <future>
 #include <boost/archive/binary_iarchive.hpp>
 #include <boost/archive/binary_oarchive.hpp>
+#include <boost/serialization/vector.hpp>
 #include <boost/serialization/unordered_map.hpp>
 #include <boost/serialization/unordered_set.hpp>
 #include <utility>
+#include <boost/functional/hash.hpp>
+#include <boost/algorithm/string.hpp>
+#include <boost/lexical_cast.hpp>
 
 namespace fs = boost::filesystem;
 

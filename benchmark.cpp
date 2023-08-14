@@ -74,8 +74,7 @@ int main(int argc, char *argv[]) {
     filter.filter_dataset();
 
     //generate minhash
-    for (size_t idx = 0; idx < ds_dirs.size(); ++idx) {
-        std::string dataset = ds_dirs[idx];
+    for (auto dataset : ds_dirs) {
         const std::string input_dir = (fs::path(redPajamaNormDir) / dataset).string();
         const std::string output_dir = (fs::path(redPajamaNormDir) / dataset).string();
         const int n_docs = std::accumulate(n_documents.begin(), n_documents.end(), 0);
@@ -85,7 +84,7 @@ int main(int argc, char *argv[]) {
         const int w = 13;
         const int k = 10000;
         ToHash to_hash(dataset, input_dir, output_dir, n_docs, iter, index_start, index_end, w, k);
-
+        to_hash.generate_hashes();
     }
 
     //generate duplicates
