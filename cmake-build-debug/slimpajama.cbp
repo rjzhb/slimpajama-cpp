@@ -257,6 +257,14 @@
 		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/benchmark.cpp">
 			<Option target="slimpajama"/>
 		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/src/preprocessing/ToHash.cpp">
+			<Option target="slimpajama"/>
+			<Option target="slimpajama_lib"/>
+		</Unit>
+		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/src/preprocessing/ToHash.h">
+			<Option target="slimpajama"/>
+			<Option target="slimpajama_lib"/>
+		</Unit>
 		<Unit filename="/home/rjzhb/Project/slimpajama-cpp/src/preprocessing/filter.cpp">
 			<Option target="slimpajama"/>
 			<Option target="slimpajama_lib"/>

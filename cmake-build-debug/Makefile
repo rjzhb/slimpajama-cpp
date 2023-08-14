@@ -192,6 +192,30 @@ benchmark.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/slimpajama.dir/build.make CMakeFiles/slimpajama.dir/benchmark.cpp.s
 .PHONY : benchmark.cpp.s
 
+src/preprocessing/ToHash.o: src/preprocessing/ToHash.cpp.o
+.PHONY : src/preprocessing/ToHash.o
+
+# target to build an object file
+src/preprocessing/ToHash.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slimpajama.dir/build.make CMakeFiles/slimpajama.dir/src/preprocessing/ToHash.cpp.o
+.PHONY : src/preprocessing/ToHash.cpp.o
+
+src/preprocessing/ToHash.i: src/preprocessing/ToHash.cpp.i
+.PHONY : src/preprocessing/ToHash.i
+
+# target to preprocess a source file
+src/preprocessing/ToHash.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slimpajama.dir/build.make CMakeFiles/slimpajama.dir/src/preprocessing/ToHash.cpp.i
+.PHONY : src/preprocessing/ToHash.cpp.i
+
+src/preprocessing/ToHash.s: src/preprocessing/ToHash.cpp.s
+.PHONY : src/preprocessing/ToHash.s
+
+# target to generate assembly for a file
+src/preprocessing/ToHash.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/slimpajama.dir/build.make CMakeFiles/slimpajama.dir/src/preprocessing/ToHash.cpp.s
+.PHONY : src/preprocessing/ToHash.cpp.s
+
 src/preprocessing/filter.o: src/preprocessing/filter.cpp.o
 .PHONY : src/preprocessing/filter.o
 
@@ -255,6 +279,9 @@ help:
 	@echo "... benchmark.o"
 	@echo "... benchmark.i"
 	@echo "... benchmark.s"
+	@echo "... src/preprocessing/ToHash.o"
+	@echo "... src/preprocessing/ToHash.i"
+	@echo "... src/preprocessing/ToHash.s"
 	@echo "... src/preprocessing/filter.o"
 	@echo "... src/preprocessing/filter.i"
 	@echo "... src/preprocessing/filter.s"

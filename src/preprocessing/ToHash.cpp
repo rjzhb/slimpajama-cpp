@@ -2,28 +2,33 @@
 // Created by 86183 on 2023/8/13.
 //
 
+#include <unordered_map>
 #include "ToHash.h"
+#include "../utils/MinHash.h"
 
-std::string get_features(const std::string& s, int width) {
-    // Convert to lowercase
+std::string remove_punctuation(const std::string &s) {
+    std::string result;
+    std::copy_if(s.begin(), s.end(), std::back_inserter(result), [](unsigned char c) {
+        return !std::ispunct(c);
+    });
+    return result;
+}
+
+
+std::vector<std::string> ToHash::get_features(const std::string &s, int width) {
     std::string lowercased = s;
     std::transform(lowercased.begin(), lowercased.end(), lowercased.begin(), [](unsigned char c) {
         return std::tolower(c);
     });
 
-    // Remove punctuation
-    std::string without_punctuation;
-    std::remove_copy_if(lowercased.begin(), lowercased.end(), std::back_inserter(without_punctuation), ispunct);
-
-    // Remove consecutive spaces, newlines, and tabs
+    std::string without_punctuation = remove_punctuation(lowercased);
     std::regex regex_whitespace("\\s+");
     std::string trimmed = std::regex_replace(without_punctuation, regex_whitespace, " ");
 
-    // Generate ngrams
-    std::string features;
+    std::vector<std::string> features;
     for (int i = 0; i <= trimmed.length() - width; i++) {
         std::string ngram = trimmed.substr(i, width);
-        features += ngram;
+        features.push_back(ngram);
     }
 
     return features;
@@ -32,12 +37,13 @@ std::string get_features(const std::string& s, int width) {
 
 namespace fs = boost::filesystem;
 
-void get_documents(const std::string& input_dir, int index_start, int index_end, const std::string& output_dir, const std::string& dataset_name) {
+void ToHash::get_documents(const std::string &input_dir, int index_start, int index_end, const std::string &output_dir,
+                           const std::string &dataset_name) {
     std::vector<std::string> files;
     std::string extension = ".jsonl";
 
     // Read and filter files
-    for (const auto& entry : fs::directory_iterator(input_dir)) {
+    for (const auto &entry: fs::directory_iterator(input_dir)) {
         std::string file_path = entry.path().string();
         if (file_path.find(extension) != std::string::npos) {
             files.push_back(file_path);
@@ -80,7 +86,7 @@ void get_documents(const std::string& input_dir, int index_start, int index_end,
     }
 }
 
-void output_results(const std::string& output_dir, const std::vector<int>& results, int chunk_id, int iter) {
+void ToHash::output_results(const std::string &output_dir, const std::vector<int> &results, int chunk_id, int iter) {
     std::ostringstream oss;
     oss << output_dir << "/minhash_nfc/" << iter << "-" << chunk_id << ".pickle";
     std::string file_path = oss.str();
@@ -95,3 +101,49 @@ void output_results(const std::string& output_dir, const std::vector<int>& resul
     }
 }
 
+
+std::vector<std::unordered_map<std::string, std::string>>
+ToHash::to_minhash(const std::vector<Document> &documents, const std::string &output_dir, int width,
+                   const std::string &dataset_name, int n_docs) {
+    std::vector<std::unordered_map<std::string, std::string>> buckets;
+    buckets.reserve(n_docs);
+
+    boost::progress_display progress(n_docs); // tqdm equivalent
+
+    for (const Document &doc: documents) {
+        std::string text = doc.text;
+        std::string file_path = doc.file_path;
+        int doc_id = doc.doc_id;
+
+        std::vector<std::string> path_components;
+        boost::split(path_components, file_path, boost::is_any_of("/"));
+
+        std::string file_name = path_components.back();
+
+        std::string output_name;
+        if (dataset_name == "common_crawl") {
+            std::string dir_2 = path_components[path_components.size() - 2];
+            output_name = dataset_name + "/" + dir_2 + "/" + file_name;
+        } else {
+            output_name = dataset_name + "/" + file_name;
+        }
+
+        MinHash m(128);
+
+        std::vector<std::string> features = get_features(text, width);
+        for (const std::string &feature: features) {
+            boost::hash_combine(m, feature);
+        }
+
+        std::unordered_map<std::string, std::string> bucket;
+        bucket["file_name"] = output_name;
+        bucket["doc_id"] = std::to_string(doc_id);
+        bucket["hash"] = m.toString();
+
+        buckets.push_back(bucket);
+
+        ++progress;
+    }
+
+    return buckets;
+}

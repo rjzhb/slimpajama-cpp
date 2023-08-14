@@ -28,6 +28,11 @@ add_executable(slimpajama benchmark.cpp
         src/preprocessing/filter.cpp
         src/preprocessing/ToHash.h
         src/preprocessing/ToHash.cpp
+        src/dedup/DuplicatePairs.h
+        src/dedup/DuplicatePairs.cpp
+        src/utils/Utils.h
+        src/utils/Utils.cpp
+        src/utils/MinHash.h
         )
 target_include_directories(slimpajama PRIVATE ${Boost_INCLUDE_DIRS})
 target_link_libraries(slimpajama

@@ -8,7 +8,6 @@
 #include <utility>
 #include <vector>
 #include <string>
-#include <boost/filesystem.hpp>
 #include <algorithm>
 #include <cmath>
 #include <thread>
@@ -19,6 +18,7 @@
 #include <unicode/utypes.h>
 #include <unicode/unistr.h>
 #include <unicode/normalizer2.h>
+#include <boost/filesystem.hpp>
 
 namespace fs = boost::filesystem;
 

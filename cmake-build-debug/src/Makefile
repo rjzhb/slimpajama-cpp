@@ -130,6 +130,30 @@ slimpajama_lib/fast:
 	cd /home/rjzhb/Project/slimpajama-cpp/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/slimpajama_lib.dir/build.make src/CMakeFiles/slimpajama_lib.dir/build
 .PHONY : slimpajama_lib/fast
 
+preprocessing/ToHash.o: preprocessing/ToHash.cpp.o
+.PHONY : preprocessing/ToHash.o
+
+# target to build an object file
+preprocessing/ToHash.cpp.o:
+	cd /home/rjzhb/Project/slimpajama-cpp/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/slimpajama_lib.dir/build.make src/CMakeFiles/slimpajama_lib.dir/preprocessing/ToHash.cpp.o
+.PHONY : preprocessing/ToHash.cpp.o
+
+preprocessing/ToHash.i: preprocessing/ToHash.cpp.i
+.PHONY : preprocessing/ToHash.i
+
+# target to preprocess a source file
+preprocessing/ToHash.cpp.i:
+	cd /home/rjzhb/Project/slimpajama-cpp/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/slimpajama_lib.dir/build.make src/CMakeFiles/slimpajama_lib.dir/preprocessing/ToHash.cpp.i
+.PHONY : preprocessing/ToHash.cpp.i
+
+preprocessing/ToHash.s: preprocessing/ToHash.cpp.s
+.PHONY : preprocessing/ToHash.s
+
+# target to generate assembly for a file
+preprocessing/ToHash.cpp.s:
+	cd /home/rjzhb/Project/slimpajama-cpp/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/slimpajama_lib.dir/build.make src/CMakeFiles/slimpajama_lib.dir/preprocessing/ToHash.cpp.s
+.PHONY : preprocessing/ToHash.cpp.s
+
 preprocessing/filter.o: preprocessing/filter.cpp.o
 .PHONY : preprocessing/filter.o
 
@@ -187,6 +211,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... slimpajama_lib"
+	@echo "... preprocessing/ToHash.o"
+	@echo "... preprocessing/ToHash.i"
+	@echo "... preprocessing/ToHash.s"
 	@echo "... preprocessing/filter.o"
 	@echo "... preprocessing/filter.i"
 	@echo "... preprocessing/filter.s"

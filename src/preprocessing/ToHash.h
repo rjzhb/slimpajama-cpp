@@ -6,6 +6,7 @@
 #define SLIMPAJAMA_TOHASH_H
 
 #include <iostream>
+#include <utility>
 #include <vector>
 #include <algorithm>
 #include <cctype>
@@ -17,14 +18,29 @@
 #include <boost/filesystem.hpp>
 #include <boost/archive/binary_oarchive.hpp>
 #include <boost/serialization/vector.hpp>
+#include <boost/functional/hash.hpp>
+#include <boost/algorithm/string.hpp>
+#include <boost/progress.hpp>
 
 class ToHash {
 public:
-    ToHash(const std::string& dataset_name, const std::string& input_dir, const std::string& output_dir, int n_docs, int iter, int index_start, int index_end, int w, int k)
-            : dataset_name_(dataset_name), input_dir_(input_dir), output_dir_(output_dir), n_docs_(n_docs), iter_(iter), index_start_(index_start), index_end_(index_end), w_(w), k_(k) {}
+    struct Document {
+        std::string text;
+        std::string file_path;
+        int doc_id;
+    };
 
-    std::string get_features(const std::string& s, int width);
 
+    ToHash(std::string dataset_name, std::string input_dir, std::string output_dir, int n_docs, int iter, int index_start, int index_end, int w, int k)
+            : dataset_name_(std::move(dataset_name)), input_dir_(std::move(input_dir)), output_dir_(std::move(output_dir)), n_docs_(n_docs), iter_(iter), index_start_(index_start), index_end_(index_end), w_(w), k_(k) {}
+
+    void get_documents(const std::string& input_dir, int index_start, int index_end, const std::string& output_dir, const std::string& dataset_name);
+
+    std::vector<std::string> get_features(const std::string& s, int width);
+
+    void output_results(const std::string& output_dir, const std::vector<int>& results, int chunk_id, int iter);
+
+    std::vector<std::unordered_map<std::string, std::string>> to_minhash(const std::vector<Document>& documents, const std::string& output_dir, int width, const std::string& dataset_name, int n_docs);
 
 private:
     std::string dataset_name_;
