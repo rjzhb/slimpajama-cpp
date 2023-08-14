@@ -15,7 +15,7 @@
 class MinHash {
 public:
     int K; // number of hash functions
-    std::vector<pair<unsigned short, unsigned short>> hf;  // hash functions
+    std::vector<std::pair<unsigned short, unsigned short>> hf;  // hash functions
     std::vector<unsigned short> hashvalues; // hash values
 
 public:

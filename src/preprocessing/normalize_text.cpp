@@ -12,13 +12,13 @@
 #include <cmath>
 #include <thread>
 #include <mutex>
-#include <boost/progress.hpp>
 #include <jsoncpp/json/value.h>
 #include <jsoncpp/json/reader.h>
 #include <unicode/utypes.h>
 #include <unicode/unistr.h>
 #include <unicode/normalizer2.h>
 #include <boost/filesystem.hpp>
+#include <boost/progress.hpp>
 
 namespace fs = boost::filesystem;
 

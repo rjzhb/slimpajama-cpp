@@ -22,20 +22,20 @@ std::vector<std::string> glob_files(const std::string& path) {
 }
 
 
-template <typename T>
-std::vector<std::vector<T>> divide(int n, const std::vector<T>& iterable) {
-    std::vector<std::vector<T>> parts(n);
-    int size = iterable.size();
-    int partSize = (size + n - 1) / n; // 向上取整
 
-    auto it = iterable.begin();
-    for (int i = 0; i < n; ++i) {
-        int count = std::min(partSize, size);
-        parts[i].reserve(count);
-        std::copy_n(it, count, std::back_inserter(parts[i]));
-        std::advance(it, count);
-        size -= count;
-    }
 
-    return parts;
+void generateHashFunc(int seed, std::vector<std::pair<unsigned short, unsigned short>> &hf) {
+    // TODO: knuth shuffling?
+    // TODO: random_seed
+    srand(seed);
+    unsigned short a = 0;
+    while (a == 0)
+        a = (unsigned short)rand();
+    unsigned short b =(unsigned short) rand();
+    hf.emplace_back(a, b);
+}
+
+// The hash value function
+unsigned short hval(const std::pair<unsigned short, unsigned short> &hf, unsigned short word) {
+    return hf.first * word + hf.second;
 }

@@ -16,11 +16,11 @@
 #include <jsoncpp/json/value.h>
 #include <jsoncpp/json/reader.h>
 #include <boost/filesystem.hpp>
+#include <boost/progress.hpp>
 #include <boost/archive/binary_oarchive.hpp>
 #include <boost/serialization/vector.hpp>
 #include <boost/functional/hash.hpp>
 #include <boost/algorithm/string.hpp>
-#include <boost/progress.hpp>
 #include <boost/serialization/unordered_map.hpp>
 #include <boost/serialization/unordered_set.hpp>
 #include <boost/lexical_cast.hpp>

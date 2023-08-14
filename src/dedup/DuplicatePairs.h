@@ -32,7 +32,7 @@ public:
 
     static std::string byteswap(const std::string& hs);
 
-    std::vector<std::vector<std::string>> split_files(const std::string& input_dir, int n_proc);
+    static std::vector<std::vector<std::string>> split_files(const std::string& input_dir, int n_proc);
 
     void lsh(const std::string& out_file, std::queue<std::pair<std::string, std::string>>& doc_queue, int idx);
 

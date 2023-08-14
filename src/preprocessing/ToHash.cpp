@@ -3,8 +3,10 @@
 //
 
 #include <unordered_map>
+#include <thread>
 #include "ToHash.h"
 #include "../utils/MinHash.h"
+#include <boost/filesystem.hpp>
 
 std::string remove_punctuation(const std::string &s) {
     std::string result;
@@ -43,10 +45,13 @@ std::vector<ToHash::Document> ToHash::get_documents(const std::string& input_dir
     std::vector<std::string> files;
     std::string extension = ".jsonl";
 
-    for (const auto& entry : std::filesystem::directory_iterator(input_dir)) {
-        std::string file_path = entry.path().string();
-        if (file_path.find(extension) != std::string::npos) {
-            files.push_back(file_path);
+    boost::filesystem::path input_path(input_dir);
+    boost::filesystem::directory_iterator end_itr;
+
+    for (boost::filesystem::directory_iterator itr(input_path); itr != end_itr; ++itr) {
+        boost::filesystem::path file_path = itr->path();
+        if (file_path.extension() == extension) {
+            files.push_back(file_path.string());
         }
     }
 
@@ -213,4 +218,3 @@ void ToHash::generate_hashes() {
     }
 
     }
-}

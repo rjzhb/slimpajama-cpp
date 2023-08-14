@@ -79,6 +79,13 @@ struct Item {
     std::string file_name;
     int doc_id;
     std::string hash;
+
+    template<class Archive>
+    void serialize(Archive& ar, const unsigned int version) {
+        ar & file_name;
+        ar & doc_id;
+        ar & hash;
+    }
 };
 
 void DuplicatePairs::get_hashes(const std::vector<std::string> &files,
